@@ -1,0 +1,181 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{9EBAE2A2-A8B8-4F04-90D6-3FE21DD4AC9A}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>test2</RootNamespace>
+    <AssemblyName>test2</AssemblyName>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>None</LinkMode>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.1.0.0\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms">
+      <HintPath>..\packages\OxyPlot.WindowsForms.1.0.0\lib\net45\OxyPlot.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm\Feff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Program.cs" />
+    <Compile Include="SubWindow\BTCreateWindow.Designer.cs">
+      <DependentUpon>BTCreateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\BTCreateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\BackGroundWindow.Designer.cs">
+      <DependentUpon>BackGroundWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\BackGroundWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\GraphShowWindow.Designer.cs">
+      <DependentUpon>GraphShowWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\GraphShowWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\LogWindow.Designer.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\LogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\MinMaxWindow.Designer.cs">
+      <DependentUpon>MinMaxWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\MinMaxWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\SelectDeleteGraph.Designer.cs">
+      <DependentUpon>SelectDeleteGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SelectDeleteGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\SelectXYDataWindow.Designer.cs">
+      <DependentUpon>SelectXYDataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SelectXYDataWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\SmoothCreateWindow.Designer.cs">
+      <DependentUpon>SmoothCreateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SmoothCreateWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="smooth_exp.inp" />
+    <EmbeddedResource Include="smooth_thr.inp" />
+    <EmbeddedResource Include="BTinp_orig.txt" />
+    <EmbeddedResource Include="SubWindow\BTCreateWindow.resx">
+      <DependentUpon>BTCreateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\BackGroundWindow.resx">
+      <DependentUpon>BackGroundWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\GraphShowWindow.resx">
+      <DependentUpon>GraphShowWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\LogWindow.resx">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\MinMaxWindow.resx">
+      <DependentUpon>MinMaxWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\SelectDeleteGraph.resx">
+      <DependentUpon>SelectDeleteGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\SelectXYDataWindow.resx">
+      <DependentUpon>SelectXYDataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\SmoothCreateWindow.resx">
+      <DependentUpon>SmoothCreateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>
